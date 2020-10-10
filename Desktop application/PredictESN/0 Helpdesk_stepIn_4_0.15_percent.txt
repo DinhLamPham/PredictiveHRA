@@ -1,0 +1,6 @@
+!@#
+!!
+START!!START!!NULL!@#Assign seriousness!!Value 2!!NULL!@#Take in charge ticket!!Value 7!!NULL!@#Resolve ticket!!Value 7!!NULL!@#Closed!!Value 5!!NULL!@#END!!END!!NULL
+START!!START!!NULL!@#Assign seriousness!!Value 2!!NULL!@#Assign seriousness!!Value 2!!NULL!@#Take in charge ticket!!Value 9!!NULL!@#Resolve ticket!!Value 13!!NULL!@#Closed!!Value 5!!NULL!@#END!!END!!NULL
+START!!START!!NULL!@#Assign seriousness!!Value 1!!NULL!@#Take in charge ticket!!Value 9!!NULL!@#Take in charge ticket!!Value 1!!NULL!@#Resolve ticket!!Value 13!!NULL!@#Closed!!Value 5!!NULL!@#END!!END!!NULL
+START!!START!!NULL!@#Assign seriousness!!Value 14!!NULL!@#Take in charge ticket!!Value 9!!NULL!@#Wait!!Value 9!!NULL!@#Take in charge ticket!!Value 13!!NULL!@#Resolve ticket!!Value 13!!NULL!@#Closed!!Value 5!!NULL!@#END!!END!!NULL

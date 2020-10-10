@@ -1,0 +1,76 @@
+{%  extends 'AdminLTE/base.html' %}
+
+{%  block dashboard %}
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Dashboard</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div id="btnUpload" class="col-md-3 col-sm-6 col-12 mybutton" onclick="location.href='uploadlog';">
+            <div class="info-box">
+              <span class="info-box-icon bg-info"><i class="fas fa-cloud-upload-alt"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Upload XES file</span>
+
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div id="btnLogs" class="col-md-3 col-sm-6 col-12 mybutton"  onclick="location.href='viewloglist';">
+            <div class="info-box">
+              <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Logs in system</span>
+                <span class="info-box-number">6</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+            <div id="btnSetting" class="col-md-3 col-sm-6 col-12 mybutton" onclick="location.href='preprocess_log';">
+            <div class="info-box">
+              <span class="info-box-icon bg-success"><i class="fa fa-wrench"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Log preprocess<br> and view</span>
+
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+
+{% endblock %}
+
+

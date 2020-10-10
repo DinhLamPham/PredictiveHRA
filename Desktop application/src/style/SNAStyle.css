@@ -1,0 +1,135 @@
+node :clicked {
+	fill-color: blue;
+}
+graph {
+        fill-color: #ffffff;
+}
+
+node 
+{
+    size: 5px;
+    text-size:    10px;
+    shape:        circle;
+/*    fill-mode: dyn-plain;
+    fill-color: red, green, blue;*/
+    fill-color: #4354a8;
+    text-visibility-mode: normal;
+}
+
+
+node.show_label{
+    text-visibility-mode: normal;
+}
+node.hide_label{
+    text-visibility-mode: hidden;
+}
+
+
+node.level1 {
+    fill-color: #a84343;
+    size: 4px;
+}
+node.level2 {
+    fill-color: #a86a43;
+    size: 5px;
+}
+node.level3 {
+    fill-color: #a89043;
+    size: 6px;
+}
+node.level4 {
+    fill-color: #a1a843;
+    size: 7px;
+}
+node.level5 {
+    fill-color: #86a843;
+    size: 8px;    
+}
+node.level6 {
+    fill-color: #43a85e;
+    size: 12px;
+}
+node.level7 {
+    fill-color: #4354a8;
+    size: 13px;
+}
+node.level8 {
+    fill-color: #43a888;
+    size: 18px;
+}
+node.level9 {
+    fill-color: #4385a8;
+    size: 22px;
+}
+node.level10 {
+    fill-color: #4357a8;
+    size: 25px;
+}
+node.redNode{
+    fill-color: red;
+}
+
+edge {
+    size:          0.2px;
+    arrow-size: 4px, 1px;
+    text-visibility-mode: hidden;
+
+    fill-mode: dyn-plain;
+    fill-color: rgba(3, 23, 252, 255);
+ 
+}
+
+
+edge.level1 {
+    size:          0.3px;
+    arrow-size: 4px, 1px;
+    fill-color: #a84343;
+}
+edge.level2 {
+	size: 0.4px;
+    arrow-size: 5px, 1.5px;
+    fill-color: #a86a43;
+}
+edge.level3 {
+	size: 0.5px;
+    arrow-size: 5px, 1.5px;
+    fill-color: #a89043;
+}
+edge.level4 {
+	size: 0.6px;
+    arrow-size: 5px, 2px;
+    fill-color: #a1a843;
+}
+edge.level5 {
+	size: 0.7px;
+    arrow-size: 6px, 3px;
+    fill-color: #86a843;
+}
+
+edge.level6 {
+	size: 0.8px;
+    arrow-size: 6px, 3px;
+    fill-color: #43a85e;
+}
+edge.level7 {
+	size: 0.9px;
+    arrow-size: 7px, 3px;
+    fill-color: #4354a8;
+}
+edge.level8 {
+	size: 1px;
+    arrow-size: 8px, 4px;
+    fill-color: #43a888;
+}
+edge.level9 {
+	size: 2px;
+    arrow-size: 9px, 4px;
+    fill-color: #385a88;
+}
+edge.level10 {
+	size: 2.2px;
+    arrow-size: 5px, 4px;
+    fill-color: #4357a8;
+}
+
+

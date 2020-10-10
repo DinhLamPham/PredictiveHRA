@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblOpenShapeList" min="-2" pref="151" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="panelNormalNode" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lblOpenInstallGraphVizInstruction" min="-2" pref="228" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnSaveAndClose" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="panelNormalNode" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblOpenShapeList" min="-2" pref="17" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblOpenInstallGraphVizInstruction" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="btnSaveAndClose" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="btnSaveAndClose">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save and Close"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveAndCloseActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JPanel" name="panelNormalNode">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="cmbClusterDirection" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="cmbClusterDistance" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" pref="19" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cmbNormalNode" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbAndGate" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbOrGate" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbLoopGate" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbImageQuality" alignment="1" min="-2" pref="89" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="cmbNodeDistanceInGroup" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cmbNormalNodeSize" alignment="1" pref="83" max="32767" attributes="0"/>
+                                      <Component id="cmbAndGateSize" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="cmbOrGateSize" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="cmbLoopGateSize" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblNormalNodeBorderColor" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="lblNormalNodeFillColor" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblAndGateBorderColor" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="lblAndGateFillColor" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblOrGateBorderColor" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="lblOrGateFillColor" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblLoopGateBorderColor" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="lblLoopGateFillColor" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblPerformersFillcolor" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblActivitiesFillcolor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cBShowEdgeValue" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbNormalNode" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblNormalNodeBorderColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblNormalNodeFillColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbNormalNodeSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAndGateBorderColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAndGateFillColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbAndGate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbAndGateSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbOrGate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblOrGateBorderColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblOrGateFillColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbOrGateSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbLoopGate" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblLoopGateBorderColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblLoopGateFillColor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbLoopGateSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbNodeDistanceInGroup" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblActivitiesFillcolor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbClusterDistance" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPerformersFillcolor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbClusterDirection" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cBShowEdgeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbImageQuality" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Normal node"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbNormalNode">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="31">
+                <StringItem index="0" value="box"/>
+                <StringItem index="1" value="circle"/>
+                <StringItem index="2" value="diamond"/>
+                <StringItem index="3" value="doublecircle"/>
+                <StringItem index="4" value="doubleoctagon"/>
+                <StringItem index="5" value="egg"/>
+                <StringItem index="6" value="ellipse"/>
+                <StringItem index="7" value="hexagon"/>
+                <StringItem index="8" value="house"/>
+                <StringItem index="9" value="invhouse"/>
+                <StringItem index="10" value="invtrapezium"/>
+                <StringItem index="11" value="invtriangle"/>
+                <StringItem index="12" value="Mcircle"/>
+                <StringItem index="13" value="Mdiamond"/>
+                <StringItem index="14" value="Msquare"/>
+                <StringItem index="15" value="octagon"/>
+                <StringItem index="16" value="oval"/>
+                <StringItem index="17" value="parallelogram"/>
+                <StringItem index="18" value="pentagon"/>
+                <StringItem index="19" value="plain"/>
+                <StringItem index="20" value="plaintext"/>
+                <StringItem index="21" value="point"/>
+                <StringItem index="22" value="polygon"/>
+                <StringItem index="23" value="rect"/>
+                <StringItem index="24" value="rectangle"/>
+                <StringItem index="25" value="septagon"/>
+                <StringItem index="26" value="square"/>
+                <StringItem index="27" value="star"/>
+                <StringItem index="28" value="trapezium"/>
+                <StringItem index="29" value="triangle"/>
+                <StringItem index="30" value="tripleoctagon"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblNormalNodeBorderColor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Border color"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblNormalNodeBorderColorMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblNormalNodeFillColor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="cc" red="99" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fill color"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblNormalNodeFillColorMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="And-Gate/Activities"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAndGateBorderColor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Border color"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAndGateBorderColorMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAndGateFillColor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fill color"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAndGateFillColorMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Or-Gate/Performers"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbOrGate">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="31">
+                <StringItem index="0" value="box"/>
+                <StringItem index="1" value="circle"/>
+                <StringItem index="2" value="diamond"/>
+                <StringItem index="3" value="doublecircle"/>
+                <StringItem index="4" value="doubleoctagon"/>
+                <StringItem index="5" value="egg"/>
+                <StringItem index="6" value="ellipse"/>
+                <StringItem index="7" value="hexagon"/>
+                <StringItem index="8" value="house"/>
+                <StringItem index="9" value="invhouse"/>
+                <StringItem index="10" value="invtrapezium"/>
+                <StringItem index="11" value="invtriangle"/>
+                <StringItem index="12" value="Mcircle"/>
+                <StringItem index="13" value="Mdiamond"/>
+                <StringItem index="14" value="Msquare"/>
+                <StringItem index="15" value="octagon"/>
+                <StringItem index="16" value="oval"/>
+                <StringItem index="17" value="parallelogram"/>
+                <StringItem index="18" value="pentagon"/>
+                <StringItem index="19" value="plain"/>
+                <StringItem index="20" value="plaintext"/>
+                <StringItem index="21" value="point"/>
+                <StringItem index="22" value="polygon"/>
+                <StringItem index="23" value="rect"/>
+                <StringItem index="24" value="rectangle"/>
+                <StringItem index="25" value="septagon"/>
+                <StringItem index="26" value="square"/>
+                <StringItem index="27" value="star"/>
+                <StringItem index="28" value="trapezium"/>
+                <StringItem index="29" value="triangle"/>
+                <StringItem index="30" value="tripleoctagon"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="2"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblOrGateBorderColor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Border color"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblOrGateBorderColorMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblOrGateFillColor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fill color"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblOrGateFillColorMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Loop-Gate"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbLoopGate">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="31">
+                <StringItem index="0" value="box"/>
+                <StringItem index="1" value="circle"/>
+                <StringItem index="2" value="diamond"/>
+                <StringItem index="3" value="doublecircle"/>
+                <StringItem index="4" value="doubleoctagon"/>
+                <StringItem index="5" value="egg"/>
+                <StringItem index="6" value="ellipse"/>
+                <StringItem index="7" value="hexagon"/>
+                <StringItem index="8" value="house"/>
+                <StringItem index="9" value="invhouse"/>
+                <StringItem index="10" value="invtrapezium"/>
+                <StringItem index="11" value="invtriangle"/>
+                <StringItem index="12" value="Mcircle"/>
+                <StringItem index="13" value="Mdiamond"/>
+                <StringItem index="14" value="Msquare"/>
+                <StringItem index="15" value="octagon"/>
+                <StringItem index="16" value="oval"/>
+                <StringItem index="17" value="parallelogram"/>
+                <StringItem index="18" value="pentagon"/>
+                <StringItem index="19" value="plain"/>
+                <StringItem index="20" value="plaintext"/>
+                <StringItem index="21" value="point"/>
+                <StringItem index="22" value="polygon"/>
+                <StringItem index="23" value="rect"/>
+                <StringItem index="24" value="rectangle"/>
+                <StringItem index="25" value="septagon"/>
+                <StringItem index="26" value="square"/>
+                <StringItem index="27" value="star"/>
+                <StringItem index="28" value="trapezium"/>
+                <StringItem index="29" value="triangle"/>
+                <StringItem index="30" value="tripleoctagon"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="3"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblLoopGateBorderColor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="0" red="33" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Border color"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLoopGateBorderColorMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblLoopGateFillColor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fill color"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLoopGateFillColorMouseClicked"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="SetupGraphvizProperties_lblLoopGateFillColor"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Image quality"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbImageQuality">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="1"/>
+                <StringItem index="1" value="2"/>
+                <StringItem index="2" value="3"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Dots per inch"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbAndGate">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="31">
+                <StringItem index="0" value="box"/>
+                <StringItem index="1" value="circle"/>
+                <StringItem index="2" value="diamond"/>
+                <StringItem index="3" value="doublecircle"/>
+                <StringItem index="4" value="doubleoctagon"/>
+                <StringItem index="5" value="egg"/>
+                <StringItem index="6" value="ellipse"/>
+                <StringItem index="7" value="hexagon"/>
+                <StringItem index="8" value="house"/>
+                <StringItem index="9" value="invhouse"/>
+                <StringItem index="10" value="invtrapezium"/>
+                <StringItem index="11" value="invtriangle"/>
+                <StringItem index="12" value="Mcircle"/>
+                <StringItem index="13" value="Mdiamond"/>
+                <StringItem index="14" value="Msquare"/>
+                <StringItem index="15" value="octagon"/>
+                <StringItem index="16" value="oval"/>
+                <StringItem index="17" value="parallelogram"/>
+                <StringItem index="18" value="pentagon"/>
+                <StringItem index="19" value="plain"/>
+                <StringItem index="20" value="plaintext"/>
+                <StringItem index="21" value="point"/>
+                <StringItem index="22" value="polygon"/>
+                <StringItem index="23" value="rect"/>
+                <StringItem index="24" value="rectangle"/>
+                <StringItem index="25" value="septagon"/>
+                <StringItem index="26" value="square"/>
+                <StringItem index="27" value="star"/>
+                <StringItem index="28" value="trapezium"/>
+                <StringItem index="29" value="triangle"/>
+                <StringItem index="30" value="tripleoctagon"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Size"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbNormalNodeSize">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="22">
+                <StringItem index="0" value="--"/>
+                <StringItem index="1" value="0.0"/>
+                <StringItem index="2" value="0.2"/>
+                <StringItem index="3" value="0.4"/>
+                <StringItem index="4" value="0.6"/>
+                <StringItem index="5" value="0.8"/>
+                <StringItem index="6" value="1.0"/>
+                <StringItem index="7" value="1.2"/>
+                <StringItem index="8" value="1.4"/>
+                <StringItem index="9" value="1.6"/>
+                <StringItem index="10" value="1.8"/>
+                <StringItem index="11" value="2.0"/>
+                <StringItem index="12" value="2.2"/>
+                <StringItem index="13" value="2.4"/>
+                <StringItem index="14" value="2.6"/>
+                <StringItem index="15" value="2.8"/>
+                <StringItem index="16" value="3.0"/>
+                <StringItem index="17" value="3.2"/>
+                <StringItem index="18" value="3.4"/>
+                <StringItem index="19" value="3.6"/>
+                <StringItem index="20" value="3.8"/>
+                <StringItem index="21" value="4.0"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbAndGateSize">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="21">
+                <StringItem index="0" value="0.0"/>
+                <StringItem index="1" value="0.2"/>
+                <StringItem index="2" value="0.4"/>
+                <StringItem index="3" value="0.6"/>
+                <StringItem index="4" value="0.8"/>
+                <StringItem index="5" value="1.0"/>
+                <StringItem index="6" value="1.2"/>
+                <StringItem index="7" value="1.4"/>
+                <StringItem index="8" value="1.6"/>
+                <StringItem index="9" value="1.8"/>
+                <StringItem index="10" value="2.0"/>
+                <StringItem index="11" value="2.2"/>
+                <StringItem index="12" value="2.4"/>
+                <StringItem index="13" value="2.6"/>
+                <StringItem index="14" value="2.8"/>
+                <StringItem index="15" value="3.0"/>
+                <StringItem index="16" value="3.2"/>
+                <StringItem index="17" value="3.4"/>
+                <StringItem index="18" value="3.6"/>
+                <StringItem index="19" value="3.8"/>
+                <StringItem index="20" value="4.0"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Size"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Size"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbOrGateSize">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="21">
+                <StringItem index="0" value="0.0"/>
+                <StringItem index="1" value="0.2"/>
+                <StringItem index="2" value="0.4"/>
+                <StringItem index="3" value="0.6"/>
+                <StringItem index="4" value="0.8"/>
+                <StringItem index="5" value="1.0"/>
+                <StringItem index="6" value="1.2"/>
+                <StringItem index="7" value="1.4"/>
+                <StringItem index="8" value="1.6"/>
+                <StringItem index="9" value="1.8"/>
+                <StringItem index="10" value="2.0"/>
+                <StringItem index="11" value="2.2"/>
+                <StringItem index="12" value="2.4"/>
+                <StringItem index="13" value="2.6"/>
+                <StringItem index="14" value="2.8"/>
+                <StringItem index="15" value="3.0"/>
+                <StringItem index="16" value="3.2"/>
+                <StringItem index="17" value="3.4"/>
+                <StringItem index="18" value="3.6"/>
+                <StringItem index="19" value="3.8"/>
+                <StringItem index="20" value="4.0"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Size"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbLoopGateSize">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="21">
+                <StringItem index="0" value="0.0"/>
+                <StringItem index="1" value="0.2"/>
+                <StringItem index="2" value="0.4"/>
+                <StringItem index="3" value="0.6"/>
+                <StringItem index="4" value="0.8"/>
+                <StringItem index="5" value="1.0"/>
+                <StringItem index="6" value="1.2"/>
+                <StringItem index="7" value="1.4"/>
+                <StringItem index="8" value="1.6"/>
+                <StringItem index="9" value="1.8"/>
+                <StringItem index="10" value="2.0"/>
+                <StringItem index="11" value="2.2"/>
+                <StringItem index="12" value="2.4"/>
+                <StringItem index="13" value="2.6"/>
+                <StringItem index="14" value="2.8"/>
+                <StringItem index="15" value="3.0"/>
+                <StringItem index="16" value="3.2"/>
+                <StringItem index="17" value="3.4"/>
+                <StringItem index="18" value="3.6"/>
+                <StringItem index="19" value="3.8"/>
+                <StringItem index="20" value="4.0"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Node distance in group"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbNodeDistanceInGroup">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="15">
+                <StringItem index="0" value="0"/>
+                <StringItem index="1" value="0.2"/>
+                <StringItem index="2" value="0.4"/>
+                <StringItem index="3" value="0.6"/>
+                <StringItem index="4" value="0.8"/>
+                <StringItem index="5" value="1.0"/>
+                <StringItem index="6" value="1.5"/>
+                <StringItem index="7" value="2.0"/>
+                <StringItem index="8" value="2.5"/>
+                <StringItem index="9" value="3.0"/>
+                <StringItem index="10" value="3.5"/>
+                <StringItem index="11" value="4.0"/>
+                <StringItem index="12" value="4.5"/>
+                <StringItem index="13" value="5.0"/>
+                <StringItem index="14" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cluster distance"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbClusterDistance">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="13">
+                <StringItem index="0" value="2.0"/>
+                <StringItem index="1" value="4.0"/>
+                <StringItem index="2" value="6.0"/>
+                <StringItem index="3" value="8.0"/>
+                <StringItem index="4" value="10"/>
+                <StringItem index="5" value="16"/>
+                <StringItem index="6" value="20"/>
+                <StringItem index="7" value="25"/>
+                <StringItem index="8" value="30"/>
+                <StringItem index="9" value="35"/>
+                <StringItem index="10" value="40"/>
+                <StringItem index="11" value="45"/>
+                <StringItem index="12" value="50"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cluster direction"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbClusterDirection">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Left to right"/>
+                <StringItem index="1" value="Top to bottom"/>
+                <StringItem index="2" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblActivitiesFillcolor">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="ff" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="cc" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Activities cluster fillcolor"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblActivitiesFillcolorMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPerformersFillcolor">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="ff" red="99" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Performers cluster fillcolor"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPerformersFillcolorMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cBShowEdgeValue">
+          <Properties>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Show Edge value"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="lblOpenShapeList">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="13" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="33" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;body&gt;&#xa;&lt;u&gt;Open list of shape name&lt;/u&gt;&#xa;&lt;/body&gt;&#xa;&lt;/html&gt;"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblOpenShapeListMouseClicked"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblOpenInstallGraphVizInstruction">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica" size="13" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="33" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt; &lt;body&gt; &lt;u&gt;Download and install Graphviz library in a new computer&lt;/u&gt; &lt;/body&gt; &lt;/html&gt;"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblOpenInstallGraphVizInstructionMouseClicked"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>

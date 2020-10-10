@@ -1,0 +1,22 @@
+{%  extends 'AdminLTE/base.html' %}
+
+{%  block dashboard %}
+
+   <div class="col-sm-12 visulize_block">
+        <div class="cy" id="cy">
+        </div>
+   </div>
+
+{% endblock %}
+
+{% block control_table %}
+    {% include 'AdminLTE/includes/bottom_panel.html' %}
+{% endblock %}
+
+{% block graphviz %}
+    <div class="row-cols-12 visulize_block_graphviz" id="graph">
+
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,914 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GraphVizHelper;
+
+import java.awt.Color;
+import java.awt.Desktop;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JColorChooser;
+import javax.swing.JFrame;
+import javax.swing.JRootPane;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import static Helper.Common.ToolsHelper.toHexString;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
+
+/**
+ *
+ * @author phamdinhlam
+ */
+public class SetupGraphvizProperties extends javax.swing.JFrame {
+
+    /**
+     * Creates new form MainForm
+     */
+    
+    private Color HexStringToColor(String hexStringColor)
+    {
+        Integer i = Integer.parseInt(hexStringColor.substring(1),16);
+        Color color = new Color(i);
+        return color;
+    }
+    private void InitFormData() throws ParserConfigurationException, SAXException, IOException
+    {
+        File f = new File(GraphVizHelper.Variables.settingINIFullPath);
+        if(f.exists() && !f.isDirectory()) 
+        { 
+            ReadGraphSettingXML.ReadGraphVizSettingToVariables();
+            lblNormalNodeBorderColor.setForeground(HexStringToColor(Variables.nodeColor));
+            lblNormalNodeFillColor.setForeground(HexStringToColor(Variables.nodeFillColor));
+            cmbNormalNode.setSelectedItem(Variables.nodeShape);
+            cmbNormalNodeSize.setSelectedItem(Variables.nodeSizeString);
+
+            lblAndGateBorderColor.setForeground(HexStringToColor(Variables.andGateColor));
+            lblAndGateFillColor.setForeground(HexStringToColor(Variables.andGateFillColor));
+            cmbAndGate.setSelectedItem(Variables.andGateShape);
+            cmbAndGateSize.setSelectedItem(Variables.andGateSizeString);
+
+            lblOrGateBorderColor.setForeground(HexStringToColor(Variables.orGateColor));
+            lblOrGateFillColor.setForeground(HexStringToColor(Variables.orGateFillColor));
+            cmbOrGate.setSelectedItem(Variables.orGateShape);
+            cmbOrGateSize.setSelectedItem(Variables.orGateSizeString);
+
+            lblLoopGateBorderColor.setForeground(HexStringToColor(Variables.loopGateColor));
+            lblLoopGateFillColor.setForeground(HexStringToColor(Variables.loopGateFillColor));
+            cmbLoopGate.setSelectedItem(Variables.loopGateShape);
+            cmbLoopGateSize.setSelectedItem(Variables.loopGateSizeString);
+            
+            cmbNodeDistanceInGroup.setSelectedItem(Variables.nodesep);
+            cmbClusterDistance.setSelectedItem(Variables.ranksep);
+            switch (Variables.rankdir)
+            {
+                case "LR":
+                    cmbClusterDirection.setSelectedIndex(0);
+                    break;
+                case "TB":
+                    cmbClusterDirection.setSelectedIndex(1);
+                    break;
+                    
+            }
+            
+            
+            lblActivitiesFillcolor.setForeground(HexStringToColor(Variables.leftSubGraphFillcolor));
+            lblPerformersFillcolor.setForeground(HexStringToColor(Variables.rightSubGraphFillColor));
+        }
+        
+        cmbImageQuality.removeAllItems();
+        for(int i=0; i<Variables.dpiSizes.length;i++)
+        {
+            Integer currentValue = Variables.dpiSizes[i];
+            cmbImageQuality.addItem(currentValue.toString());
+        }
+        cmbImageQuality.setSelectedIndex(Variables.currentDpiPos);
+            
+    }
+    
+    public SetupGraphvizProperties() throws ParserConfigurationException, SAXException, IOException {
+        initComponents();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setResizable(false);
+        
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); 
+        
+        InitFormData();
+        
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        btnSaveAndClose = new javax.swing.JButton();
+        panelNormalNode = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        cmbNormalNode = new javax.swing.JComboBox<>();
+        lblNormalNodeBorderColor = new javax.swing.JLabel();
+        lblNormalNodeFillColor = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblAndGateBorderColor = new javax.swing.JLabel();
+        lblAndGateFillColor = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        cmbOrGate = new javax.swing.JComboBox<>();
+        lblOrGateBorderColor = new javax.swing.JLabel();
+        lblOrGateFillColor = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        cmbLoopGate = new javax.swing.JComboBox<>();
+        lblLoopGateBorderColor = new javax.swing.JLabel();
+        lblLoopGateFillColor = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        cmbImageQuality = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        cmbAndGate = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        cmbNormalNodeSize = new javax.swing.JComboBox<>();
+        cmbAndGateSize = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        cmbOrGateSize = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        cmbLoopGateSize = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        cmbNodeDistanceInGroup = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        cmbClusterDistance = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
+        cmbClusterDirection = new javax.swing.JComboBox<>();
+        lblActivitiesFillcolor = new javax.swing.JLabel();
+        lblPerformersFillcolor = new javax.swing.JLabel();
+        cBShowEdgeValue = new javax.swing.JCheckBox();
+        lblOpenShapeList = new javax.swing.JLabel();
+        lblOpenInstallGraphVizInstruction = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnSaveAndClose.setText("Save and Close");
+        btnSaveAndClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveAndCloseActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Normal node");
+
+        cmbNormalNode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "box", "circle", "diamond", "doublecircle", "doubleoctagon", "egg", "ellipse", "hexagon", "house", "invhouse", "invtrapezium", "invtriangle", "Mcircle", "Mdiamond", "Msquare", "octagon", "oval", "parallelogram", "pentagon", "plain", "plaintext", "point", "polygon", "rect", "rectangle", "septagon", "square", "star", "trapezium", "triangle", "tripleoctagon" }));
+
+        lblNormalNodeBorderColor.setForeground(new java.awt.Color(51, 0, 255));
+        lblNormalNodeBorderColor.setText("Border color");
+        lblNormalNodeBorderColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNormalNodeBorderColorMouseClicked(evt);
+            }
+        });
+
+        lblNormalNodeFillColor.setForeground(new java.awt.Color(153, 204, 255));
+        lblNormalNodeFillColor.setText("Fill color");
+        lblNormalNodeFillColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblNormalNodeFillColorMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setText("And-Gate/Activities");
+
+        lblAndGateBorderColor.setForeground(new java.awt.Color(51, 0, 255));
+        lblAndGateBorderColor.setText("Border color");
+        lblAndGateBorderColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAndGateBorderColorMouseClicked(evt);
+            }
+        });
+
+        lblAndGateFillColor.setForeground(new java.awt.Color(255, 204, 204));
+        lblAndGateFillColor.setText("Fill color");
+        lblAndGateFillColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAndGateFillColorMouseClicked(evt);
+            }
+        });
+
+        jLabel2.setText("Or-Gate/Performers");
+
+        cmbOrGate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "box", "circle", "diamond", "doublecircle", "doubleoctagon", "egg", "ellipse", "hexagon", "house", "invhouse", "invtrapezium", "invtriangle", "Mcircle", "Mdiamond", "Msquare", "octagon", "oval", "parallelogram", "pentagon", "plain", "plaintext", "point", "polygon", "rect", "rectangle", "septagon", "square", "star", "trapezium", "triangle", "tripleoctagon" }));
+        cmbOrGate.setSelectedIndex(2);
+
+        lblOrGateBorderColor.setForeground(new java.awt.Color(51, 0, 255));
+        lblOrGateBorderColor.setText("Border color");
+        lblOrGateBorderColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOrGateBorderColorMouseClicked(evt);
+            }
+        });
+
+        lblOrGateFillColor.setForeground(new java.awt.Color(255, 255, 102));
+        lblOrGateFillColor.setText("Fill color");
+        lblOrGateFillColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOrGateFillColorMouseClicked(evt);
+            }
+        });
+
+        jLabel4.setText("Loop-Gate");
+
+        cmbLoopGate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "box", "circle", "diamond", "doublecircle", "doubleoctagon", "egg", "ellipse", "hexagon", "house", "invhouse", "invtrapezium", "invtriangle", "Mcircle", "Mdiamond", "Msquare", "octagon", "oval", "parallelogram", "pentagon", "plain", "plaintext", "point", "polygon", "rect", "rectangle", "septagon", "square", "star", "trapezium", "triangle", "tripleoctagon" }));
+        cmbLoopGate.setSelectedIndex(3);
+
+        lblLoopGateBorderColor.setForeground(new java.awt.Color(51, 0, 255));
+        lblLoopGateBorderColor.setText("Border color");
+        lblLoopGateBorderColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLoopGateBorderColorMouseClicked(evt);
+            }
+        });
+
+        lblLoopGateFillColor.setForeground(new java.awt.Color(204, 0, 0));
+        lblLoopGateFillColor.setText("Fill color");
+        lblLoopGateFillColor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLoopGateFillColorMouseClicked(evt);
+            }
+        });
+
+        jLabel5.setText("Image quality");
+
+        cmbImageQuality.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+
+        jLabel6.setText("Dots per inch");
+
+        cmbAndGate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "box", "circle", "diamond", "doublecircle", "doubleoctagon", "egg", "ellipse", "hexagon", "house", "invhouse", "invtrapezium", "invtriangle", "Mcircle", "Mdiamond", "Msquare", "octagon", "oval", "parallelogram", "pentagon", "plain", "plaintext", "point", "polygon", "rect", "rectangle", "septagon", "square", "star", "trapezium", "triangle", "tripleoctagon" }));
+        cmbAndGate.setSelectedIndex(1);
+
+        jLabel7.setText("Size");
+
+        cmbNormalNodeSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--", "0.0", "0.2", "0.4", "0.6", "0.8", "1.0", "1.2", "1.4", "1.6", "1.8", "2.0", "2.2", "2.4", "2.6", "2.8", "3.0", "3.2", "3.4", "3.6", "3.8", "4.0" }));
+
+        cmbAndGateSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.0", "0.2", "0.4", "0.6", "0.8", "1.0", "1.2", "1.4", "1.6", "1.8", "2.0", "2.2", "2.4", "2.6", "2.8", "3.0", "3.2", "3.4", "3.6", "3.8", "4.0" }));
+
+        jLabel8.setText("Size");
+
+        jLabel9.setText("Size");
+
+        cmbOrGateSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.0", "0.2", "0.4", "0.6", "0.8", "1.0", "1.2", "1.4", "1.6", "1.8", "2.0", "2.2", "2.4", "2.6", "2.8", "3.0", "3.2", "3.4", "3.6", "3.8", "4.0" }));
+
+        jLabel10.setText("Size");
+
+        cmbLoopGateSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.0", "0.2", "0.4", "0.6", "0.8", "1.0", "1.2", "1.4", "1.6", "1.8", "2.0", "2.2", "2.4", "2.6", "2.8", "3.0", "3.2", "3.4", "3.6", "3.8", "4.0" }));
+
+        jLabel11.setText("Node distance in group");
+
+        cmbNodeDistanceInGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "0.2", "0.4", "0.6", "0.8", "1.0", "1.5", "2.0", "2.5", "3.0", "3.5", "4.0", "4.5", "5.0", " " }));
+
+        jLabel12.setText("Cluster distance");
+
+        cmbClusterDistance.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2.0", "4.0", "6.0", "8.0", "10", "16", "20", "25", "30", "35", "40", "45", "50" }));
+
+        jLabel13.setText("Cluster direction");
+
+        cmbClusterDirection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Left to right", "Top to bottom", " " }));
+
+        lblActivitiesFillcolor.setBackground(new java.awt.Color(255, 204, 204));
+        lblActivitiesFillcolor.setForeground(new java.awt.Color(255, 204, 153));
+        lblActivitiesFillcolor.setText("Activities cluster fillcolor");
+        lblActivitiesFillcolor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblActivitiesFillcolorMouseClicked(evt);
+            }
+        });
+
+        lblPerformersFillcolor.setForeground(new java.awt.Color(153, 255, 153));
+        lblPerformersFillcolor.setText("Performers cluster fillcolor");
+        lblPerformersFillcolor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPerformersFillcolorMouseClicked(evt);
+            }
+        });
+
+        cBShowEdgeValue.setSelected(true);
+        cBShowEdgeValue.setText("Show Edge value");
+
+        javax.swing.GroupLayout panelNormalNodeLayout = new javax.swing.GroupLayout(panelNormalNode);
+        panelNormalNode.setLayout(panelNormalNodeLayout);
+        panelNormalNodeLayout.setHorizontalGroup(
+            panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelNormalNodeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelNormalNodeLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbClusterDirection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelNormalNodeLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbClusterDistance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelNormalNodeLayout.createSequentialGroup()
+                        .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 19, Short.MAX_VALUE)
+                        .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbNormalNode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbAndGate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbOrGate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbLoopGate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbImageQuality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelNormalNodeLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbNodeDistanceInGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelNormalNodeLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelNormalNodeLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelNormalNodeLayout.createSequentialGroup()
+                                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cmbNormalNodeSize, javax.swing.GroupLayout.Alignment.TRAILING, 0, 83, Short.MAX_VALUE)
+                                    .addComponent(cmbAndGateSize, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cmbOrGateSize, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cmbLoopGateSize, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNormalNodeLayout.createSequentialGroup()
+                                        .addComponent(lblNormalNodeBorderColor)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblNormalNodeFillColor))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNormalNodeLayout.createSequentialGroup()
+                                        .addComponent(lblAndGateBorderColor)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblAndGateFillColor))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNormalNodeLayout.createSequentialGroup()
+                                        .addComponent(lblOrGateBorderColor)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblOrGateFillColor))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNormalNodeLayout.createSequentialGroup()
+                                        .addComponent(lblLoopGateBorderColor)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblLoopGateFillColor))))
+                            .addGroup(panelNormalNodeLayout.createSequentialGroup()
+                                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPerformersFillcolor)
+                                    .addComponent(lblActivitiesFillcolor)
+                                    .addComponent(cBShowEdgeValue))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
+        );
+        panelNormalNodeLayout.setVerticalGroup(
+            panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelNormalNodeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cmbNormalNode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNormalNodeBorderColor)
+                    .addComponent(lblNormalNodeFillColor)
+                    .addComponent(jLabel7)
+                    .addComponent(cmbNormalNodeSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(lblAndGateBorderColor)
+                    .addComponent(lblAndGateFillColor)
+                    .addComponent(cmbAndGate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(cmbAndGateSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(cmbOrGate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblOrGateBorderColor)
+                    .addComponent(lblOrGateFillColor)
+                    .addComponent(jLabel9)
+                    .addComponent(cmbOrGateSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(cmbLoopGate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLoopGateBorderColor)
+                    .addComponent(lblLoopGateFillColor)
+                    .addComponent(jLabel10)
+                    .addComponent(cmbLoopGateSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(cmbNodeDistanceInGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblActivitiesFillcolor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(cmbClusterDistance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPerformersFillcolor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(cmbClusterDirection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cBShowEdgeValue))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelNormalNodeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(cmbImageQuality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)))
+        );
+
+        lblOpenShapeList.setFont(new java.awt.Font("Helvetica", 0, 13)); // NOI18N
+        lblOpenShapeList.setForeground(new java.awt.Color(0, 51, 255));
+        lblOpenShapeList.setText("<html>\n<body>\n<u>Open list of shape name</u>\n</body>\n</html>");
+        lblOpenShapeList.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblOpenShapeList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOpenShapeListMouseClicked(evt);
+            }
+        });
+
+        lblOpenInstallGraphVizInstruction.setFont(new java.awt.Font("Helvetica", 0, 13)); // NOI18N
+        lblOpenInstallGraphVizInstruction.setForeground(new java.awt.Color(0, 51, 255));
+        lblOpenInstallGraphVizInstruction.setText("<html> <body> <u>Download and install Graphviz library in a new computer</u> </body> </html>");
+        lblOpenInstallGraphVizInstruction.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblOpenInstallGraphVizInstruction.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblOpenInstallGraphVizInstructionMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblOpenShapeList, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(panelNormalNode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblOpenInstallGraphVizInstruction, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSaveAndClose)))
+                .addGap(32, 32, 32))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelNormalNode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblOpenShapeList, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblOpenInstallGraphVizInstruction, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSaveAndClose))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void SaveSetting() throws ParserConfigurationException, TransformerConfigurationException, TransformerException
+    {
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder;
+        dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.newDocument();
+        
+        
+        Element rootElement = doc.createElement("graphviz");
+        doc.appendChild(rootElement);
+        
+        //-------------Them gia tri 
+        for(int i=1;i<=7;i++)
+        {
+            String tmpId = "";
+            String tmpShape="";
+            String tmpSize="";
+            String tmpBorderColor="";
+            String tmpFillColor="";
+            
+            String tmpNodesep="", tmpRanksep="", tmpRankdir="";
+            
+            switch(i)
+            {
+                case 1:
+                    tmpId="NormalNode";
+                    tmpShape=Variables.nodeShape;
+                    tmpSize=Variables.nodeSizeString;
+                    tmpBorderColor=Variables.nodeColor;
+                    tmpFillColor=Variables.nodeFillColor;
+                    break;
+                case 2:
+                    tmpId="And-Gate";
+                    tmpShape=Variables.andGateShape;
+                    tmpSize=Variables.andGateSizeString;
+                    tmpBorderColor=Variables.andGateColor;
+                    tmpFillColor=Variables.andGateFillColor;
+                    break;
+                case 3:
+                    tmpId="Or-Gate";
+                    tmpShape=Variables.orGateShape;
+                    tmpSize=Variables.orGateSizeString;
+                    tmpBorderColor=Variables.orGateColor;
+                    tmpFillColor=Variables.orGateFillColor;
+                    break;
+                case 4:
+                    tmpId="Loop-Gate";
+                    tmpShape=Variables.loopGateShape;
+                    tmpSize=Variables.loopGateSizeString;
+                    tmpBorderColor=Variables.loopGateColor;
+                    tmpFillColor=Variables.loopGateFillColor;
+                    break;
+                case 5:
+                    tmpId="Cluster";
+                    tmpNodesep = Variables.nodesep;
+                    tmpRanksep = Variables.ranksep;
+                    tmpRankdir = Variables.rankdir;
+                    break;
+                case 6:
+                    tmpId="Left-Cluster";
+                    tmpFillColor=Variables.leftSubGraphFillcolor;
+                    break;
+                case 7:
+                    tmpId="Right-Cluster";
+                    tmpFillColor=Variables.rightSubGraphFillColor;
+                    break;
+                    
+                    
+            }
+            
+            Element graphvizNodeElement = doc.createElement("graphvizNode");
+            graphvizNodeElement.setAttribute("id", tmpId);
+            
+            if(!tmpId.equals("Cluster"))
+            {
+                Element nodeShapeElement = doc.createElement("shape");
+                nodeShapeElement.appendChild(doc.createTextNode(tmpShape.trim()));
+
+                Element nodeSizeElement = doc.createElement("size");
+                nodeSizeElement.appendChild(doc.createTextNode(tmpSize.trim()));
+
+                Element bordercolorElement = doc.createElement("bordercolor");
+                bordercolorElement.appendChild(doc.createTextNode(tmpBorderColor));
+
+                Element fillcolorElement = doc.createElement("fillcolor");
+                fillcolorElement.appendChild(doc.createTextNode(tmpFillColor));
+
+                graphvizNodeElement.appendChild(nodeShapeElement);
+                graphvizNodeElement.appendChild(nodeSizeElement);
+                graphvizNodeElement.appendChild(bordercolorElement);
+                graphvizNodeElement.appendChild(fillcolorElement);
+            }
+            else
+            {
+                Element nodeSepElement = doc.createElement("nodesep");
+                nodeSepElement.appendChild(doc.createTextNode(tmpNodesep.trim()));
+
+                Element nodeDepElement = doc.createElement("ranksep");
+                nodeDepElement.appendChild(doc.createTextNode(tmpRanksep.trim()));
+
+                Element nodeRankElement = doc.createElement("rankdir");
+                nodeRankElement.appendChild(doc.createTextNode(tmpRankdir.trim()));
+                
+                 graphvizNodeElement.appendChild(nodeSepElement);
+                graphvizNodeElement.appendChild(nodeDepElement);
+                graphvizNodeElement.appendChild(nodeRankElement);
+            }
+
+            
+
+            rootElement.appendChild(graphvizNodeElement);
+        }
+        // ---------_
+        
+        Path currentRelativePath = Paths.get("");
+        String currentPathString = currentRelativePath.toAbsolutePath().toString();
+        
+        String filePath =currentPathString + Variables.settingINIpath;
+        if(!filePath.equals("NONE"))
+        {
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource domSource = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(filePath));
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+            transformer.transform(domSource, result);
+            
+        }
+
+    
+        
+    }
+    
+    private void btnSaveAndCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveAndCloseActionPerformed
+        // TODO add your handling code here:
+        Variables.currentDpiPos = cmbImageQuality.getSelectedIndex();
+        
+        Variables.nodeShape = cmbNormalNode.getSelectedItem().toString();
+        Variables.nodeSizeString = cmbNormalNodeSize.getSelectedItem().toString();
+        Variables.nodeColor = toHexString(lblNormalNodeBorderColor.getForeground());
+        Variables.nodeFillColor = toHexString(lblNormalNodeFillColor.getForeground());
+        
+        Variables.andGateShape = cmbAndGate.getSelectedItem().toString();
+        Variables.andGateSizeString = cmbAndGateSize.getSelectedItem().toString();
+        Variables.andGateColor = toHexString(lblAndGateBorderColor.getForeground());
+        Variables.andGateFillColor = toHexString(lblAndGateFillColor.getForeground());
+        
+        Variables.orGateShape = cmbOrGate.getSelectedItem().toString();
+        Variables.orGateSizeString = cmbOrGateSize.getSelectedItem().toString();
+        Variables.orGateColor = toHexString(lblOrGateBorderColor.getForeground());
+        Variables.orGateFillColor = toHexString(lblOrGateFillColor.getForeground());
+        
+        Variables.loopGateShape = cmbLoopGate.getSelectedItem().toString();
+        Variables.loopGateSizeString = cmbLoopGateSize.getSelectedItem().toString();
+        Variables.loopGateColor = toHexString(lblLoopGateBorderColor.getForeground());
+        Variables.loopGateFillColor = toHexString(lblLoopGateFillColor.getForeground());
+        
+        Variables.nodesep = cmbNodeDistanceInGroup.getSelectedItem().toString();
+        Variables.ranksep = cmbClusterDistance.getSelectedItem().toString();
+        Integer direction = cmbClusterDirection.getSelectedIndex();
+        
+        Variables.showEdgeLabel = cBShowEdgeValue.isSelected();
+        
+        switch (direction) {
+            case 0: //Left to right
+                Variables.rankdir = "LR";
+                break;
+            case 1: //Top to bottom
+                Variables.rankdir = "BT";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        Variables.leftSubGraphFillcolor = toHexString(lblActivitiesFillcolor.getForeground());
+        Variables.rightSubGraphFillColor = toHexString(lblPerformersFillcolor.getForeground());
+        
+        try {
+            SaveSetting();
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(SetupGraphvizProperties.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (TransformerException ex) {
+            Logger.getLogger(SetupGraphvizProperties.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        setVisible(false);
+        dispose();
+        
+        
+    }//GEN-LAST:event_btnSaveAndCloseActionPerformed
+
+    private void lblNormalNodeBorderColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNormalNodeBorderColorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+            if (c != null)
+            {
+                 lblNormalNodeBorderColor.setForeground(c);
+            } 
+    }//GEN-LAST:event_lblNormalNodeBorderColorMouseClicked
+
+    private void lblNormalNodeFillColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNormalNodeFillColorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+            if (c != null)
+            {
+                 lblNormalNodeFillColor.setForeground(c);
+            } 
+        
+    }//GEN-LAST:event_lblNormalNodeFillColorMouseClicked
+
+    private void lblAndGateBorderColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAndGateBorderColorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+            if (c != null)
+            {
+                 lblAndGateBorderColor.setForeground(c);
+            } 
+    }//GEN-LAST:event_lblAndGateBorderColorMouseClicked
+
+    private void lblAndGateFillColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAndGateFillColorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+            if (c != null)
+            {
+                 lblAndGateFillColor.setForeground(c);
+            } 
+    }//GEN-LAST:event_lblAndGateFillColorMouseClicked
+
+    private void lblOrGateFillColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrGateFillColorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+        if (c != null)
+        {
+            lblOrGateFillColor.setForeground(c);
+        }
+    }//GEN-LAST:event_lblOrGateFillColorMouseClicked
+
+    private void lblOrGateBorderColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOrGateBorderColorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+        if (c != null)
+        {
+            lblOrGateBorderColor.setForeground(c);
+        }
+    }//GEN-LAST:event_lblOrGateBorderColorMouseClicked
+
+    private void lblOpenShapeListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOpenShapeListMouseClicked
+        // TODO add your handling code here:
+        String url="https://www.graphviz.org/doc/info/shapes.html";
+        OpenWebpage(url);
+    }//GEN-LAST:event_lblOpenShapeListMouseClicked
+
+    private void lblLoopGateBorderColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoopGateBorderColorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+        if (c != null)
+        {
+            lblLoopGateBorderColor.setForeground(c);
+        }
+    }//GEN-LAST:event_lblLoopGateBorderColorMouseClicked
+
+    private void lblLoopGateFillColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoopGateFillColorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+        if (c != null)
+        {
+            lblLoopGateFillColor.setForeground(c);
+        }
+    }//GEN-LAST:event_lblLoopGateFillColorMouseClicked
+
+    public static void OpenWebpage(String url)
+    {
+        if (Desktop.isDesktopSupported()) 
+        {
+            String filePath = url;
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                URI uri = new URI(filePath);
+                desktop.browse(uri);
+            } catch (IOException ex) {
+                    // do nothing
+            } catch (URISyntaxException ex) {
+                        //do nothing
+                }
+        }
+    }
+    private void lblOpenInstallGraphVizInstructionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOpenInstallGraphVizInstructionMouseClicked
+        // TODO add your handling code here:
+        String url="https://graphviz.gitlab.io/download/";
+        OpenWebpage(url);
+    }//GEN-LAST:event_lblOpenInstallGraphVizInstructionMouseClicked
+
+    private void lblActivitiesFillcolorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblActivitiesFillcolorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+            if (c != null)
+            {
+                 lblActivitiesFillcolor.setForeground(c);
+            } 
+    }//GEN-LAST:event_lblActivitiesFillcolorMouseClicked
+
+    private void lblPerformersFillcolorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPerformersFillcolorMouseClicked
+        // TODO add your handling code here:
+        Color c = JColorChooser.showDialog(null, "Choose a Color", Color.ORANGE);
+            if (c != null)
+            {
+                 lblPerformersFillcolor.setForeground(c);
+            } 
+    }//GEN-LAST:event_lblPerformersFillcolorMouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(SetupGraphvizProperties.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(SetupGraphvizProperties.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(SetupGraphvizProperties.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(SetupGraphvizProperties.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new SetupGraphvizProperties().setVisible(true);
+                } catch (ParserConfigurationException ex) {
+                    Logger.getLogger(SetupGraphvizProperties.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SAXException ex) {
+                    Logger.getLogger(SetupGraphvizProperties.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(SetupGraphvizProperties.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+    }
+    
+
+    @Override
+    public Graphics getGraphics() {
+        return super.getGraphics(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSaveAndClose;
+    private javax.swing.JCheckBox cBShowEdgeValue;
+    private javax.swing.JComboBox<String> cmbAndGate;
+    private javax.swing.JComboBox<String> cmbAndGateSize;
+    private javax.swing.JComboBox<String> cmbClusterDirection;
+    private javax.swing.JComboBox<String> cmbClusterDistance;
+    private javax.swing.JComboBox<String> cmbImageQuality;
+    private javax.swing.JComboBox<String> cmbLoopGate;
+    private javax.swing.JComboBox<String> cmbLoopGateSize;
+    private javax.swing.JComboBox<String> cmbNodeDistanceInGroup;
+    private javax.swing.JComboBox<String> cmbNormalNode;
+    private javax.swing.JComboBox<String> cmbNormalNodeSize;
+    private javax.swing.JComboBox<String> cmbOrGate;
+    private javax.swing.JComboBox<String> cmbOrGateSize;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblActivitiesFillcolor;
+    protected javax.swing.JLabel lblAndGateBorderColor;
+    protected javax.swing.JLabel lblAndGateFillColor;
+    protected javax.swing.JLabel lblLoopGateBorderColor;
+    protected javax.swing.JLabel lblLoopGateFillColor;
+    protected javax.swing.JLabel lblNormalNodeBorderColor;
+    protected javax.swing.JLabel lblNormalNodeFillColor;
+    protected javax.swing.JLabel lblOpenInstallGraphVizInstruction;
+    protected javax.swing.JLabel lblOpenShapeList;
+    protected javax.swing.JLabel lblOrGateBorderColor;
+    protected javax.swing.JLabel lblOrGateFillColor;
+    private javax.swing.JLabel lblPerformersFillcolor;
+    private javax.swing.JPanel panelNormalNode;
+    // End of variables declaration//GEN-END:variables
+}

@@ -1,0 +1,208 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+}
+
+#container{
+    width: 1000px;
+    height: 650px;
+    /*background-image: linear-*/
+    /*gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(gradient-Img.png); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(gradient-Img.png);
+    margin: 20px auto;
+}
+
+
+#calculator{
+    width:320px;
+    height: 520px;
+    background-color: #125761;
+    margin: 0 auto;
+    top: 20px;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px 0 coral;
+}
+#result{height:120px;}
+#history{
+    text-align: right;
+    height: 20px;
+    margin: 0 20px;
+    padding-top: 20px;
+    fint-size: 15px;
+    color: #919191;
+
+}
+#output{
+    text-align: right;
+    height: 60px;
+    margin: 10px 20px;
+    font-size: 30px;
+}
+
+#keyboard{height:400px;}
+.operator, .number, .empty{
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border-radius: 1000%;
+    border-width: 0;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.number, .empty{
+    background-color: #eaedef;
+}
+.number, .operator{
+    cursor: pointer;
+}
+.operator:active, .number:active{
+    font-size:13px;
+}
+#mybutton{
+
+}
+
+.mybutton:active{
+    font-size:13px;
+    font-weight: bold;
+    cursor:pointer;
+}
+.mybutton:hover{
+    cursor: pointer;
+}
+.operator:focus, .number:focus, .empty:focus{
+    outline: 0;
+}
+button:nth-child(4){
+    font-size:20px;
+    background-color:aqua;
+}
+button:nth-child(8){
+    font-size:20px;
+    background-color: darkcyan;
+}
+button:nth-child(12){
+    font-size:20px;
+    background-color: darkmagenta;
+}
+button:nth-child(16){
+    font-size:20px;
+    background-color: firebrick;
+}
+
+#example tbody tr td{
+padding:0;
+}
+
+.visulize_block_graphviz{
+    /*height: 800px;*/
+    border-top: 1px solid;
+    background-color:white;
+    text-align: center;
+}
+
+.visulize_block{
+    height:700px;
+    border-bottom: 1px solid;
+}
+#cy {
+
+	height: 680px;
+	display: block;
+	margin-left: 5px;
+    background-color:white;
+
+}
+
+.trace_table_block{
+    border-right: 1px solid;
+    width:100%
+}
+
+.dataTables_paginate a {
+        padding: 6px 10px !important;
+        background: #f4f6f9 !important;
+        border-color: #2196F3 !important;
+    }
+.dataTables_length input-sm{
+    width:10px;
+}
+
+#tblData tr td{
+	padding:0
+}
+
+.smallfont {
+	font-size: 10px;
+}
+
+#keyboard{height:400px;}
+.operator, .number, .empty{
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border-radius: 1000%;
+    border-width: 0;
+    font-weight: bold;
+    font-size: 10px;
+
+}
+.number, .empty{
+    background-color: #eaedef;
+}
+.number, .operator{
+    cursor: pointer;
+}
+.operator:active, .number:active{
+    font-size:8px;
+}
+.operator:focus, .number:focus, .empty:focus{
+    outline: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

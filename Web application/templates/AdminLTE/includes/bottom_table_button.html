@@ -1,0 +1,24 @@
+{% if trace_range is not None %}
+    <table id="" class="table table-sm" style="height:300px; overflow-y: auto; display:block;">
+        <thead>
+            <tr>
+                <td></td>
+                <td><b>Activity</b></td>
+                <td><b>Performer</b></td>
+                <td><b>Timestamp</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in trace_list %}
+                <tr>
+                    <td> {{ forloop.counter }} </td>
+                    {% for item in row %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+{#    act0-1: {{act.0}}; {{act.1}}; {{ act.2 }}#}
+{% endif %}

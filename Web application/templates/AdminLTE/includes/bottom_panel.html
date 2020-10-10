@@ -1,0 +1,108 @@
+<footer class="control-bar">
+
+    <div class="row" style="margin-left: 10px; font-size:10px;">
+        <div class="" style="margin: 10px 10px 10px 10px; border-right:1px solid; width: 400px;">
+            <div class="row">
+                <div class="col-6" style="text-align: right;">
+                    <label>Input traces (0, 1, 0-10,...):</label>
+                </div>
+                <div class="col-6">
+                    <input id="txtTraceId" type="text" placeholder="0-{{ total_traces }}" value="{{ traceid }}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label>Type:</label>
+                    <select id="visual_type" name="visual_type">
+                        <option value="" >Select layout</option>
+                        <option value="Random">Random</option>
+                        <option value="Cose" selected="selected">Cose</option>
+                        <option value="Grid">Grid</option>
+                        <option value="Circle">Circle</option>
+                        <option value="Concentric">Concentric</option>
+                        <option value="Breadthfirst">Breadthfirst</option>
+
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <select id="graph_type" name="graph_type">
+                        <option value="Activity" selected="selected">Activity</option>
+                        <option value="Performer">Performer</option>
+                        <option value="Affiliation Network">Affiliation Network</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="row">
+                        <input type="checkbox" id="showIncomingEdge" name="showIncomingEdge" value="showIncoming">
+                        <label for="showIncomingEdge" style="margin-right:5px">Incoming</label><br>
+
+                        <input type="checkbox" id="showOutgoingEdge" name="showOutgoingEdge" value="showOutgoing">
+                        <label for="showOutgoingEdge">Outgoing</label><br>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row" style="font-size:12px; margin: 5px;">
+                <input type="hidden" id="logid" value="{{ logid }}" />
+                <input type="hidden" id="url" value="{{ request.path }}"/>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <span class="info-box-icon  mybutton"><i class="fa fa-arrow-circle-right" onclick="getInputTrace();">View trace</i></span>
+                </div>
+                <div class="col-3">
+                    <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="VisualizeGraph();">Visualize</i></span>
+                </div>
+
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                    <div class="col-3">
+                        <span class="info-box-icon  mybutton"><i class="fa fa-plus-circle" onclick="AdjAllNodeSize(3,3)">node size +</i></span>
+                    </div>
+                    <div class="col-3">
+                        <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="AdjAllNodeSize(-3,-3)">node size -</i></span>
+                    </div>
+
+                    <div class="col-3">
+                        <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="ShowHideNodeOccurence();">Show/hide occurence</i></span>
+                    </div>
+
+                    <div class="col-3">
+                        <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="ShowHideEdgeWeight();">Show/hide edge weight</i></span>
+                    </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                    <div class="col-3">
+                        <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="AddNodeToCy();">Add Node</i></span>
+                    </div>
+
+                    <div class="col-3">
+                        <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="AddEdge();">Add Edge</i></span>
+                    </div>
+
+
+                    <div class="col-3">
+                        <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="AnimateGraph();">Animate graph</i></span>
+
+
+
+                    </div>
+            </div>
+
+
+        </div>
+        <div class="col-4" style="border-right: 1px solid;">
+            {% include 'AdminLTE/includes/bottom_table_button.html' %}
+        </div>
+        <div class="col-3">
+
+              {% include 'AdminLTE/includes/function_commands.html' %}
+        </div>
+
+
+
+    </div>
+  </footer>

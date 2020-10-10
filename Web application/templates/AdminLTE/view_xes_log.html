@@ -1,0 +1,88 @@
+{%  extends 'AdminLTE/base.html' %}
+{% load widget_tweaks %}
+
+{% block xeslog_upload_form %}
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>View uploaded log in system</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active">View log list</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+    <div class="card">
+  <!-- /.card-header -->
+      <div class="card-body">
+        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                          <thead>
+                          <tr role="row">
+                               <th class="sorting" tabindex="0" aria-controls="tbl_log_list" rowspan="1" colspan="1" aria-label="Count">Count</th>
+                              {% for column in col_data%}
+                                  <th class="sorting" tabindex="0" aria-controls="tbl_log_list" rowspan="1" colspan="1" aria-label="{{column}}">{{column}}</th>
+                              {% endfor %}
+                                <th class="sorting" tabindex="0" aria-controls="tbl_log_list" rowspan="1" colspan="1" aria-label="Action">Action</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                            {% for row in row_data %}
+                                 <tr role="row">
+                                    <td>{{ forloop.counter }}</td>
+                                    {% for item in row %}
+                                        <td>{{ item }}</td>
+                                    {% endfor %}
+                                    <td>
+                                        <b class="mybutton" onclick="location.href='visualizelog/{{ row.0 }}';">View</b> |
+                                        <b>Edit</b> |
+                                        <b>Delete</b>
+                                    </td>
+                                 </tr>
+                            {% endfor %}
+
+{#                            {% for row in total_row %}#}
+{##}
+{#                            {% endfor %}#}
+
+
+
+                          </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                        <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                <li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                                <li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+       </div>
+                  <!-- /.card-body -->
+    </div>
+
+
+
+{% endblock %}

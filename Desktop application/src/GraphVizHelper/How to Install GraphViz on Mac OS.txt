@@ -1,0 +1,5 @@
+How to Install GraphViz on Mac OS
+Open terminal:
+brew install graphviz
+
+[https://brewformulas.org/Graphviz]

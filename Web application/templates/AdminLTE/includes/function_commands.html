@@ -1,0 +1,44 @@
+{% if traceid is not None %}
+    <div class="row" style="margin-top:10px">
+        <div class="col-3">
+            <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="RemoveDeleberateNoises();">Create steady graph</i></span>
+        </div>
+        <div class="col-3">
+            <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="RecoverEdgeForStandAloneNode();">Recover essential edges</i></span>
+        </div>
+        <div class="col-3">
+            <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="BuildICNModel();">Discover ICN</i></span>
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top:10px">
+        <div class="col-3">
+            <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="FormatByDC();">Degree centrality</i></span>
+        </div>
+
+        <div class="col-3">
+            <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="FormatByBC();">Betweenness centrality</i></span>
+        </div>
+
+        <div class="col-3">
+            <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="FormatByCC();">Closenness centrality</i></span>
+        </div>
+
+        <div class="col-3">
+            <span class="info-box-icon  mybutton"><i class="fa fa-sitemap" onclick="ShowGraphViz();">Show in graphviz</i></span>
+        </div>
+
+
+    </div>
+
+    <div class="row" style="margin-top:10px">
+         <div class="col-6" style="text-align: right;">
+                <label>Sample for programming:</label>
+        </div>
+        <div class="col-6">
+            <input id="txtSample" type="text" placeholder="split values by comma" value="">
+        </div>
+    </div>
+
+{% endif %}

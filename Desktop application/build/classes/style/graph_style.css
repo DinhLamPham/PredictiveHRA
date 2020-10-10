@@ -1,0 +1,44 @@
+node {
+	fill-color: white;
+	size: 5px;
+	text-size: 6px;	
+	text-background-mode: rounded-box;
+        text-alignment: along;
+	/*text-background-color: yellow;*/
+}
+
+
+node :clicked {
+	fill-color: green;
+	size: 20px; 
+}
+
+node.redNode{
+    fill-color: red;
+}
+
+node.highLight{
+    fill-color: red;
+}
+
+edge {
+	/*fill-color: black;*/
+	size: 0.5px;
+	text-size: 6px;
+	/*text-background-mode: rounded-box;*/
+	text-background-color: white; 
+}
+
+edge.redEdge{
+    fill-color:red;
+}
+
+edge .marked {
+	fill-color: red;
+	size: 8px;
+}
+
+graph {
+	/*fill-color: #dae3ea;*/
+        fill-color: #112255;
+}
