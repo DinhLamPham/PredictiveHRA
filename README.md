@@ -2,6 +2,7 @@
 This repository is apart of the PhD thesis entitled Predictive Human Resource Allocation with Mining and Deep Learning on Process-aware Enterprises
 
 The repository is categorized as follows:
+- Experimental results: This folder contains experimental results on three data sets i.e., Helpdesk, BPI 2012, and BPI 2017.
 - Desktop App: This folder contains the desktop application described in the Thesis and was built by Java JDK 8. 
 To run the application in your computer, please note that: 
     + Install Java JDK 8. Download it from here: https://www.oracle.com/kr/java/technologies/javase/javase-jdk8-downloads.html
@@ -25,5 +26,9 @@ To run the application, please note that:
         + python_dateutil==2.8.1
         
      + Install MySQL database version >= 5.1. The SQL script of database is stored in folder "**Web App\Database**"
+     + Run the application by using this command: `python manage.py runserver`
+    
+    ![Web Application](./Images/WebUI1.png)
      
+If you need any additional information, don't hesitate to contact me at _phamdinhlam (at) kyonggi dot ac dot kr_
  
