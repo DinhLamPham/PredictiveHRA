@@ -14,10 +14,9 @@
   
  "**\Experimental results\Comparisons**": This folder contains comparison information of different accuracy on different observations.
  For example: the training accuracy on BPI 2017 data set while observing at activity as shown in the image below.
- ![Comparison of train accuracy](.\Comparisons\3_BPI_Challenge_2017_1feature_Activity.png)
+ ![Comparison of train accuracy](.\Images\3_BPI_Challenge_2017_1feature_Activity.png)
  
- "**Experimental results\Predicted networks and HRA**":
- - Helpdesk
- ![Affiliation network](.\Predicted networks and HRA\Helpdesk_AN_ActivityFilter.png)
- ![Betweenness centrality](.\Predicted networks and HRA\Helpdesk_BetweennessCentrality.png)
+ "**Experimental results\Predicted networks and HRA**": This folder contains the predicted networks as well as the human resource allocation
+ with these networks
+ 
  
