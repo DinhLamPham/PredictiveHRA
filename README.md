@@ -1,4 +1,5 @@
-# Predictive Human Resource Allocation with Mining and Deep Learning on Process-aware Enterprises
+# Deep Learning-based Predictive Resource Allocation Intelligence for Process-aware Enterprises
+
 This repository is apart of the PhD thesis entitled Predictive Human Resource Allocation with Mining and Deep Learning on Process-aware Enterprises
 
 The repository is categorized as follows:
