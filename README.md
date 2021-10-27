@@ -9,7 +9,7 @@ To run the application in your computer, please note that:
     + Install Java JDK 8. Download it from here: https://www.oracle.com/kr/java/technologies/javase/javase-jdk8-downloads.html
     + Install MySQL database version >= 5.1. The SQL script of database is stored in folder "**Desktop App\Database**"
     + All Java source code is located in folder "**Desktop App\src**"
-    + All Python source code is located in folder "**Desktop App\Python tool**"
+    + All Python source code is located in folder "**Web App**"
     + To run the application, follow the instructions in file "Desktop App\Instructions.doc" 
     
     ![Desktop Application](./Images/DesktopUI1.png)
