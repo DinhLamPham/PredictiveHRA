@@ -1,7 +1,7 @@
 matplotlib==3.2.2
-numpy==1.18.5
-pandas==1.0.5
-PyMySQL==0.9.3
+numpy
+panda
+PyMySQL
 Django==3.0.8
 networkx==2.4
 python_dateutil==2.8.1

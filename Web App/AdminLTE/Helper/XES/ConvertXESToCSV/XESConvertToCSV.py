@@ -13,27 +13,21 @@ performer_key = 'org:resource'
 timestamp_key = 'time:timestamp'
 
 
+def Save_XES_Log_list_To_TXT(_log_list, output_file):
 
-def Save_XES_Log_list_To_CSV(_log_list, output_file):
+    with open(output_file, 'w') as fp:
+        for trace in _log_list:
+            fp.write(f'{trace}\n')
+        print('write file done!!!')
 
-    result = []
-    for trace in _log_list:
-        total_event = len(trace)
-        row = [total_event]
-        for event in trace:
-            eventInfo = event.split(key_connect_inside)
-            activity, performer, timestamp = eventInfo[0], eventInfo[1], eventInfo[2]
-            row.append(activity), row.append(performer), row.append(timestamp)
-        result.append(row)
-        print(result)
-    df = pd.DataFrame(result)
-    df.to_csv(output_file)
 
 
 
 
 def XESLogProcess(_input_log):
     log_list_string = []
+
+    count = 0
 
     startTrace, endTrace, startEvent, endEvent = False, False, False, False
     trace_list, event_list = [], []
@@ -71,11 +65,13 @@ def XESLogProcess(_input_log):
             elif 'trace' in this_tag:
                 startTrace = False
                 event_list.append('END'+key_connect_inside+'END'+key_connect_inside+'END')
-                log_list_string.append(event_list)
+                this_trace = key_connect_node.join(event_list)
+                log_list_string.append(this_trace)
+                print(f'----------------append number trace: {len(log_list_string)}')
 
-    Save_XES_Log_list_To_CSV(log_list_string, input_file.replace('xes', 'csv'))
+    Save_XES_Log_list_To_TXT(log_list_string, input_file.replace('xes', 'txt'))
 
 
-input_file = 'ETM_Configuration1.xes'
+input_file = 'bpi2012.xes'
 XESLogProcess(input_file)
 
