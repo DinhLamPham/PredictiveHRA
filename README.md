@@ -28,8 +28,6 @@ To run the application, please note that:
         
      + Install MySQL database version >= 5.1. The SQL script of database is stored in folder "**Web App\Database**"
      + Run the application by using this command: `python manage.py runserver`
-    
-    ![Web Application](./Images/WebUI1.png)
      
 If you need any additional information, don't hesitate to contact me at _phamdinhlam (at) kyonggi dot ac dot kr_
  
